@@ -17,7 +17,9 @@
     // Contar caracteres (strlen)
     //echo strlen($nome);
 
-    echo $numeroCaracteres;
+    // Exercicio 1: Imprimir o texto:
+    // "Seu nome é: 'nome', ele tem n caracteres"
+    echo "Seu nome é: $nome, ele tem $numeroCaracteres caracteres";
 
     //Exemplo de integer:
     //Exemplo de float (decimal):
