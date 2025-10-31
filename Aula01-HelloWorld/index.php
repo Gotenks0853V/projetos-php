@@ -4,5 +4,6 @@
     $primeiroNome = "José";
     $segundoNome = "Bezerra";
 
-    echo "Hello World! ", $primeiroNome," ", $segundoNome;
+    // Concatenação simples de strings, feita com aspas duplas
+    echo "Hello World! $primeiroNome $segundoNome";
 ?>
