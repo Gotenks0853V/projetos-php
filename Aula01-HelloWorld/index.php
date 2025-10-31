@@ -1,3 +1,8 @@
 <?php
-    echo "<h1>Hello World!</h1>";
+
+    // Definição de variável em PHP começa com cifrão ($)
+    $primeiroNome = "José";
+    $segundoNome = "Bezerra";
+
+    echo "Hello World! ", $primeiroNome," ", $segundoNome;
 ?>
