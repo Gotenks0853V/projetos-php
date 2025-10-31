@@ -2,7 +2,7 @@
 
     //Exemplo de string:
     $nome = 'Alessandro Kobs';
-    $numeroCaracteres = strlen($nome);
+    //$numeroCaracteres = strlen($nome);
 
     // Atalho Ctrl+/ para comentar linhas selecionadas
     // Exibir:
@@ -14,12 +14,23 @@
     // Exibir junto com string:
     //echo "Meu nome é: $nome";
 
-    // Contar caracteres (strlen)
+    // Contar o número de caracteres em uma string (strlen)
     //echo strlen($nome);
 
     // Exercicio 1: Imprimir o texto:
     // "Seu nome é: 'nome', ele tem n caracteres"
-    echo "Seu nome é: $nome, ele tem $numeroCaracteres caracteres";
+    //echo "Seu nome é: $nome, ele tem $numeroCaracteres caracteres";
+
+    // Exemplo de string:
+    $texto = 'Pera, uva, maça e salada mista';
+
+    // strlen() - Conta o número de caracteres de uma string:
+    $numeroCaracteres = strlen($texto);
+
+    //strpos() - Busca a posição de uma palavra em uma string;
+    $posicaoPalavraUva = strpos($texto, "uva");
+
+    echo $posicaoPalavraUva;
 
     //Exemplo de integer:
     //Exemplo de float (decimal):
