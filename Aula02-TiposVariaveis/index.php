@@ -27,10 +27,15 @@
     // strlen() - Conta o número de caracteres de uma string:
     $numeroCaracteres = strlen($texto);
 
-    //strpos() - Busca a posição de uma palavra em uma string;
-    $posicaoPalavraUva = strpos($texto, "uva");
+    //strpos() - Busca a posição de uma palavra em uma string:
+    $posicaoPalavraUva = strpos($texto, "uva",);
 
-    echo $posicaoPalavraUva;
+    // Exercicio: Buscar posição palavras uva e pera, e escrever:
+    // A palavra uva começa na posição X, e pera na posição Y
+    $posicaoPalavraPera = strpos($texto, "Pera");
+
+    echo ("A palavra uva começa na posição $posicaoPalavraUva, e pera na posição $posicaoPalavraPera.");
+
 
     //Exemplo de integer:
     //Exemplo de float (decimal):
