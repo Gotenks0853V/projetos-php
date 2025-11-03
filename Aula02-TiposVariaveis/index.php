@@ -51,9 +51,8 @@
     Funções Para Trabalhar Com Strings (Fim)
 */
 
-
+/*  Operações com Inteiros (Início)
     //Exemplo de integer:
-
     $idade = 33;
 
     // Soma:
@@ -70,9 +69,29 @@
 
     // Multiplicação:
     echo $idade*$idade;
-
+    Operações com Inteiros (Fim)
+*/
 
     //Exemplo de float (decimal):
+    $altura = 1.75;
+
+    $num1 = 2.0;
+    $num2 = 2.50;
+
+    //Operações básicas
+    echo 'Multiplicação: '.($num1*$num2);
+    echo '<br>';
+    echo 'Adição: '.($num1+$num2);
+    echo '<br>';
+    echo 'Subtração: '.($num1-$num2);
+    echo '<br>';
+    echo 'Divisão: '.($num1/$num2);
+
+    // Arredondamento
+
+    // round()
+    //$num3 = 2.90;
+
     //Exemplo de boolean:
 
 ?>
