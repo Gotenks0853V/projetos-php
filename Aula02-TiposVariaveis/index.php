@@ -1,5 +1,5 @@
 <?php
-
+/*  Funções Para Trabalhar Com Strings (Início)
     //Exemplo de string:
     $nome = 'Alessandro Kobs';
     //$numeroCaracteres = strlen($nome);
@@ -48,8 +48,30 @@
     $posicaoPalavraPera = strpos($texto, "Pera");
     $parteDaString = substr($texto, $posicaoPalavraPera, $caracteresPalavraPera);
     echo $parteDaString;
+    Funções Para Trabalhar Com Strings (Fim)
+*/
+
 
     //Exemplo de integer:
+
+    $idade = 33;
+
+    // Soma:
+    echo $idade+$idade;
+    echo '<br>';
+
+    // Subtração:
+    echo $idade-$idade;
+    echo '<br>';
+
+    // Divisão:
+    echo $idade/$idade;
+    echo '<br>';
+
+    // Multiplicação:
+    echo $idade*$idade;
+
+
     //Exemplo de float (decimal):
     //Exemplo de boolean:
 
