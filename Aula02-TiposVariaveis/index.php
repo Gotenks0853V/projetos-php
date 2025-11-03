@@ -79,18 +79,30 @@
     $num2 = 2.50;
 
     //Operações básicas
-    echo 'Multiplicação: '.($num1*$num2);
-    echo '<br>';
-    echo 'Adição: '.($num1+$num2);
-    echo '<br>';
-    echo 'Subtração: '.($num1-$num2);
-    echo '<br>';
-    echo 'Divisão: '.($num1/$num2);
+    // echo 'Multiplicação: '.($num1*$num2);
+    // echo '<br>';
+    // echo 'Adição: '.($num1+$num2);
+    // echo '<br>';
+    // echo 'Subtração: '.($num1-$num2);
+    // echo '<br>';
+    // echo 'Divisão: '.($num1/$num2);
 
     // Arredondamento
 
     // round()
-    //$num3 = 2.90;
+    $num3 = 2.50;
+    echo 'Arredondamento com round() do número: '.$num3.' para o número '.round($num3);
+    echo '<br>';
+
+    // floor()
+    $num4 = 2.9;
+    echo 'Arredondamento com floor() do número: '.$num4.' para o número '.floor($num4);
+    echo '<br>';
+
+    // ceil()
+    $num5 = 3.01;
+    echo 'Arredondamento com ceil() do número: '.$num5.' para o número '.ceil($num5);
+    echo '<br>';
 
     //Exemplo de boolean:
 
