@@ -72,6 +72,7 @@
     Operações com Inteiros (Fim)
 */
 
+/*  
     //Exemplo de float (decimal):
     $altura = 1.75;
 
@@ -103,7 +104,16 @@
     $num5 = 3.01;
     echo 'Arredondamento com ceil() do número: '.$num5.' para o número '.ceil($num5);
     echo '<br>';
+    */
 
     //Exemplo de boolean:
+    $estaEstudando = true;
+    //var_dump($estaEstudando);
+
+    if ($estaEstudando) {
+        echo "Parabéns";
+    } else {
+        echo "Vá estudar";
+    }
 
 ?>
