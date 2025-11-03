@@ -23,7 +23,7 @@
 
     // Exemplo de string:
     $texto = 'Pera, uva, maça e salada mista';
-/*
+
     // strlen() - Conta o número de caracteres de uma string:
     $numeroCaracteres = strlen($texto);
 
@@ -33,14 +33,20 @@
     // Exercicio: Buscar posição palavras uva e pera, e escrever:
     // A palavra uva começa na posição X, e pera na posição Y
     $posicaoPalavraPera = strpos($texto, "Pera");
-    echo ("A palavra uva começa na posição $posicaoPalavraUva, e pera na posição $posicaoPalavraPera.");
-*/
+    //echo ("A palavra uva começa na posição $posicaoPalavraUva, e pera na posição $posicaoPalavraPera.");
+
     //substr() - Retorna uma parte de uma string:
-    $parteDaString = substr($texto, 6, 3);
-    echo $parteDaString;
+    //$parteDaString = substr($texto, 6, 3);
+    //echo $parteDaString;
 
     // Exercicio: Retirar apenas a palavra Pera, usando a função substr():
-    $parteDaString = substr($texto, 0, 4);
+    //$parteDaString = substr($texto, 0, 4);
+    //echo $parteDaString;
+
+    //Utilizando as funções como parâmetro para a busca
+    $caracteresPalavraPera = strlen("Pera");
+    $posicaoPalavraPera = strpos($texto, "Pera");
+    $parteDaString = substr($texto, $posicaoPalavraPera, $caracteresPalavraPera);
     echo $parteDaString;
 
     //Exemplo de integer:
