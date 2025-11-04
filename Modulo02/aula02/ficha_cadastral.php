@@ -11,19 +11,18 @@
     $esta_empregado = true;
     $habilidades = ['PHP', 'JavaScript', 'HTML', 'CSS'];
 
-    $status_emprego = null;
-    if ($esta_empregado) {
-        $status_emprego = 'Empregado';
-    } else {
-        $status_emprego = 'Desempregado';
-    }
+    // Diferença Operador Ternário
+    // if()... else...
+    // () ? ... : ...
+
+    $situacaoEmprego = $esta_empregado ? 'Empregado' : 'Desempregado';
+
+    // Ternário:
+    // variavel = condição ? valor_se_atender_condicao : valor_se_nao_atender_condicao
 
     $anos_totais_para_aposentar = null;
-    if ($sexo == 'M') {
-        $anos_totais_para_aposentar = IDADE_APOSENTADORIA_MASCULINA;
-    } else {
-        $anos_totais_para_aposentar = IDADE_APOSENTADORIA_FEMININA;
-    }
+    $anos_totais_para_aposentar = $sexo == 'M' ? IDADE_APOSENTADORIA_MASCULINA : IDADE_APOSENTADORIA_FEMININA;
+
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +81,7 @@
             <p>Sexo: <strong><?= $sexo; ?></strong></p>
             <p>Salário Mensal: <strong>R$ <?= number_format($salario_mensal, 2, ',', '.') ?></strong></p>
             <p>Salário Anual: <strong>R$ <?= number_format($salario_mensal * 12, 2, ',', '.') ?></strong></p>
-            <p>Status de Emprego: <strong><?= $status_emprego; ?></strong></p>
+            <p>Status de Emprego: <strong><?= $situacaoEmprego; ?></strong></p>
             <p>Anos para Aposentadoria: <strong><?= $anos_totais_para_aposentar - $idade ?></strong></p>
             <p>Habilidades: <strong><?php echo implode(', ', $habilidades) ?></strong></p>
         </div>
