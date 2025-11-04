@@ -1,4 +1,8 @@
 <?php
+    
+    // Criando uma constante
+    define('IDADE_APOSENTADORIA_MASCULINA', 65);
+    define('IDADE_APOSENTADORIA_FEMININA', 62);
 
     $nome = 'João Silva';
     $idade = 25;
@@ -16,9 +20,9 @@
 
     $anos_totais_para_aposentar = null;
     if ($sexo == 'M') {
-        $anos_totais_para_aposentar = 65;
+        $anos_totais_para_aposentar = IDADE_APOSENTADORIA_MASCULINA;
     } else {
-        $anos_totais_para_aposentar = 62;
+        $anos_totais_para_aposentar = IDADE_APOSENTADORIA_FEMININA;
     }
 ?>
 
