@@ -6,6 +6,20 @@
     $salario_mensal = 2210.30;
     $esta_empregado = true;
     $habilidades = ['PHP', 'JavaScript', 'HTML', 'CSS'];
+
+    $status_emprego = null;
+    if ($esta_empregado) {
+        $status_emprego = 'Empregado';
+    } else {
+        $status_emprego = 'Desempregado';
+    }
+
+    $anos_totais_para_aposentar = null;
+    if ($sexo == 'M') {
+        $anos_totais_para_aposentar = 65;
+    } else {
+        $anos_totais_para_aposentar = 62;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -64,29 +78,9 @@
             <p>Sexo: <strong><?= $sexo; ?></strong></p>
             <p>Salário Mensal: <strong><?= $salario_mensal; ?></strong></p>
             <p>Salário Anual: <strong><?= $salario_mensal * 12; ?></strong></p>
-            <p>Status de Emprego: <strong>
-                <?php
-                if ($esta_empregado == true) {
-                    echo 'Empregado';
-                } else {
-                    echo 'Desempregado';
-                }
-                ?>
-            </strong></p>
-            <p>Anos para Aposentadoria: <strong>
-                <?php
-                $total_para_aposentar = null;
-                if ($sexo == 'M') {
-                    $total_para_aposentar = 65;
-                } else {
-                    $total_para_aposentar = 62;
-                }
-                echo $total_para_aposentar - $idade;
-                ?>
-            </strong></p>
-            <p>Habilidades: <strong>
-                <?php echo implode(', ', $habilidades); ?>
-            </strong></p>
+            <p>Status de Emprego: <strong><?= $status_emprego; ?></strong></p>
+            <p>Anos para Aposentadoria: <strong><?= $anos_totais_para_aposentar - $idade; ?></strong></p>
+            <p>Habilidades: <strong><?php echo implode(', ', $habilidades); ?></strong></p>
         </div>
     </div>
 </body>
