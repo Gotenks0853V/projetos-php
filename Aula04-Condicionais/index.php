@@ -1,6 +1,6 @@
 <?php
     //Estruturas Condicionais
-    $nome = 'Alessandro';
+    //$nome = 'Alessandro';
 
     // Operadores de Comparação
 
@@ -12,7 +12,11 @@
     // >= (Maior ou igual a)
     // <= (Menor ou igual a)
 
-    if ($nome == 'Alessandro') {
-        echo 'Olá Alessandro';
+    $idade = 17;
+
+    if ($idade > 18) {
+        echo 'Você pode acessar o sistema';
+    } else {
+        echo 'Você não pode acessar o sistema';
     }
 ?>
