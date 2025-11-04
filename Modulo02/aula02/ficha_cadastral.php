@@ -59,14 +59,34 @@
     <div class="container">
         <div class="card">
             <h1>Ficha Cadastral</h1>
-            <p>Nome: <strong><?php echo $nome; ?></strong></p>
-            <p>Idade: <strong>25</strong></p>
-            <p>Sexo: <strong>M</strong></p>
-            <p>Salário Mensal: <strong>2.210,30</strong></p>
-            <p>Salário Anual: <strong>X</strong></p>
-            <p>Status de Emprego: <strong>Empregado</strong></p>
-            <p>Anos para Aposentadoria: <strong>40</strong></p>
-            <p>Habilidades: <strong>PHP, JavaScript, HTML, CSS</strong></p>
+            <p>Nome: <strong><?= $nome; ?></strong></p>
+            <p>Idade: <strong><?= $idade; ?></strong></p>
+            <p>Sexo: <strong><?= $sexo; ?></strong></p>
+            <p>Salário Mensal: <strong><?= $salario_mensal; ?></strong></p>
+            <p>Salário Anual: <strong><?= $salario_mensal * 12; ?></strong></p>
+            <p>Status de Emprego: <strong>
+                <?php
+                if ($esta_empregado == true) {
+                    echo 'Empregado';
+                } else {
+                    echo 'Desempregado';
+                }
+                ?>
+            </strong></p>
+            <p>Anos para Aposentadoria: <strong>
+                <?php
+                $total_para_aposentar = null;
+                if ($sexo == 'M') {
+                    $total_para_aposentar = 65;
+                } else {
+                    $total_para_aposentar = 62;
+                }
+                echo $total_para_aposentar - $idade;
+                ?>
+            </strong></p>
+            <p>Habilidades: <strong>
+                <?php echo implode(', ', $habilidades); ?>
+            </strong></p>
         </div>
     </div>
 </body>
