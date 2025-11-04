@@ -1,3 +1,7 @@
+<?php
+    $nome = 'Jorge'
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,7 +13,9 @@
 
 <body>
     <h1>Olá Mundo</h1>
-    <h2>Eu sou Alessandro</h2>
+    <h2><?php
+    echo "Eu sou $nome";
+    ?></h2>
 
     
 </body>
