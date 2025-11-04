@@ -49,11 +49,22 @@
 
     // /! Operador lógico de negação
 
-    $temCarteira = false;
+    $temCarteira = 'ppd';
 
-    if (!$temCarteira) {
+    // null == false
+    // 0 == false
+    // 1 == true
+
+    // null = Nulo ou Vazio
+    // '===' Verificação de tipo
+
+    if ($temCarteira === false) {
         echo 'Você não pode dirigir';
-    } else {
+    } elseif ($temCarteira === true) {
         echo 'Você pode dirigir';
+    } elseif ($temCarteira === 'ppd') {
+        echo 'Você pode dirigir com cuidado';
+    } else {
+        echo 'Não sei se você pode dirigir';
     }
 ?>
