@@ -39,6 +39,7 @@
     // echo '2011 sem acompanhante: '.portaoDeBalada(2011).'<br/>';
 
 
+    // Utilizando parametros nomeados.
     function parametrosNomeados(string $nome, string $sobrenome, int $idade): string {
         return "Olá, $nome $sobrenome. Você tem $idade anos.";
     }
