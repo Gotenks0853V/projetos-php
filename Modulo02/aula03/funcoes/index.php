@@ -40,13 +40,32 @@
 
 
     // Utilizando parametros nomeados.
+    // Documentando código com PHPDoc '@param e @return'
+
+    /**
+     * Gera uma string de saudação
+     * 
+     * @param string $nome Nome da pessoa
+     * @param string $sobrenome Sobrenome da pessoa
+     * @param string $idade Idade da pessoa
+     * 
+     * @return string Saudação
+     */
     function parametrosNomeados(string $nome, string $sobrenome, int $idade): string {
         return "Olá, $nome $sobrenome. Você tem $idade anos.";
     }
 
     //echo parametrosNomeados(nome: 'Alessandro', sobrenome: 'Kobs', idade: 34);
 
-    function somar($n1, $n2) {
+    /**
+     * Soma dois números
+     * 
+     * @param float $n1 Primeiro números a ser somado
+     * @param float $n2 Segundo números a ser somado
+     * 
+     * @return float Soma dois números
+     */
+    function somar(float $n1, float $n2): float {
         return $n1 + $n2;
     }
 
