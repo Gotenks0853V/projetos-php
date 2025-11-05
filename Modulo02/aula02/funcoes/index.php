@@ -1,3 +1,7 @@
 <?php 
-    echo 'Olá mundo';
+    function saudacao() {
+        return 'Olá mundo';
+    }
+    
+    echo saudacao();
 ?>
