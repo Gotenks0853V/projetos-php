@@ -2,6 +2,7 @@
 
     require 'constants.php';
     include 'data.php';
+    include 'functions.php';
 
 ?>
 
@@ -59,10 +60,10 @@
             <p>Nome: <strong><?= $nome; ?></strong></p>
             <p>Idade: <strong><?= $idade; ?></strong></p>
             <p>Sexo: <strong><?= $sexo; ?></strong></p>
-            <p>Salário Mensal: <strong>R$ <?= number_format($salario_mensal, 2, ',', '.') ?></strong></p>
-            <p>Salário Anual: <strong>R$ <?= number_format($salario_mensal * 12, 2, ',', '.') ?></strong></p>
+            <p>Salário Mensal: <strong>R$ <?= numeroEmValorMoneratioBRL($salario_mensal) ?></strong></p>
+            <p>Salário Anual: <strong>R$ <?= calcularSalarioAnual($salario_mensal) ?></strong></p>
             <p>Status de Emprego: <strong><?= $situacaoEmprego; ?></strong></p>
-            <p>Anos para Aposentadoria: <strong><?= $anos_totais_para_aposentar - $idade ?></strong></p>
+            <p>Anos para Aposentadoria: <strong><?= anosFaltamParaAposentar($idade, $sexo) ?></strong></p>
             <p>Habilidades: <strong><?php echo implode(', ', $habilidades) ?></strong></p>
         </div>
     </div>
