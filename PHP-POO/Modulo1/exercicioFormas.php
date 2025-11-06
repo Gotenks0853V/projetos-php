@@ -1,11 +1,11 @@
 <?php
-    //define('PI', 3.14);
     abstract class FiguraGeometrica{
 
         abstract public function calcularArea();
+        abstract public function descricao();
 
-        public function descricao() {
-            return 'Essa é uma forma geométrica.';
+        public function exibirArea() {
+            return $this->descricao().$this->calcularArea().'<br>';
         }
     }
 
@@ -20,13 +20,59 @@
         {
             return $this->lado * $this->lado;
         }
+
+        public function descricao()
+        {
+            return 'Este é um quadrado, com a área de: ';
+        }
     }
 
-    $quadrado = new Quadrado(5);
-    echo $Quadrado->calcularArea();
-    echo $quadrado->descricao();
+    class Retangulo extends FiguraGeometrica {
+        private $altura, $largura;
 
-    // $raio = 7;
-    // $areaCirculo = PI * ($raio*$raio);
-    // echo 'Área circulo: '.$areaCirculo;
+        public function __construct($altura, $largura) {
+            $this->altura = $altura;
+            $this->largura = $largura;
+        }
+
+        public function calcularArea()
+        {
+            return $this->altura * $this->largura;
+        }
+
+        public function descricao()
+        {
+            return 'Este é um retângulo, com a área de: ';
+        }
+    }
+
+    class Triangulo extends FiguraGeometrica {
+        private $base, $altura;
+
+        public function __construct($base, $altura) 
+        {
+            $this->base = $base;
+            $this->altura = $altura;
+        }
+
+        public function calcularArea()
+        {
+            return $this->base * $this->altura/2;
+        }
+
+        public function descricao()
+        {
+            return 'Este é um triângulo, com a área de: ';
+        }
+    }
+
+    $quadrado = new Quadrado(2);
+    echo $quadrado->exibirArea();
+    
+    $retangulo = new Retangulo(4, 2);
+    echo $retangulo->exibirArea();
+    
+    $triangulo = new Triangulo(4, 10);
+    echo $triangulo->exibirArea();
+
 ?>
