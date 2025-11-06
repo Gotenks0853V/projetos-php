@@ -1,0 +1,15 @@
+{
+    "name": "gotenks/biblioteca",
+    "description": "Nossa biblioteca POO",
+    "autoload": {
+        "psr-4": {
+            "Gotenks\\Biblioteca\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gotenks0853V"
+        }
+    ],
+    "require": {}
+}
