@@ -27,14 +27,34 @@ class Estante {
         );
     }
 
-    function buscarLivroPorTitulo()
+    public function buscarLivroPorTitulo(string $titulo): ?Livro
     {
-
+        foreach($this->livros as $livro) {
+            if (\str_contains(strtolower(($livro->getTitulo())), strtolower($titulo))) {
+                return $livro;
+            }
+            // if (strtolower($livro->getTitulo()) === strtolower($titulo)) {
+            //     return $livro;
+            // }
+        }
+        return null;
     }
 
-    function listarLivrosDisponiveis()
+    public function listarLivrosDisponiveis(): array
     {
+        // Uma segunda forma de realizar a mesma ação
+        // $livrosDisponiveis = [];
+        // foreach ($this->livros as $livroAtual) {
+        //     if ($livroAtual->estaDisponivel()) {
+        //         $livrosDisponiveis[] = $livroAtual;
+        //     }
+        // }
+        // return $livrosDisponiveis;
 
+
+        return array_filter($this->livros, function($livroAtual) {
+            return $livroAtual->estaDisponivel();
+        });
     }
 }
 ?>

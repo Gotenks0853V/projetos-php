@@ -7,22 +7,29 @@ use \Gotenks\Biblioteca\Estante;
 
 echo '<h1>Sistema de Biblioteca Iniciado!</h1><br>';
 
-$livro1 = new Livro('Alessandro Kobs', 'PHP 8 e POO');
-$livro2 = new Livro('Alessandro Kobs', 'Java iniciantes');
+$livro1 = new Livro('Alessandro Kobs', 'PHP 8 e POO para iniciantes');
+$livro2 = new Livro('Alessandro Kobs', 'Java para iniciantes');
+$livro3 = new Livro('Alessandro Kobs', 'Python para iniciantes');
+
+$livro1->marcarComoDisponivel();
 
 $estante = new Estante();
 
 $estante->adicionarLivro($livro1);
 $estante->adicionarLivro($livro2);
+$estante->adicionarLivro($livro3);
 
-echo'<pre>';
+$livroEncontrado = $estante->buscarLivroPorTitulo('iniciantes');
+//print_r($livroEncontrado);
+echo '<pre>';
+var_dump($estante->listarLivrosDisponiveis());
+
+//echo'<pre>';
 //var_dump($estante);
-print_r($estante);
-echo '<hr>';
-
-$estante->removerLivro($livro2);
-
-print_r($estante);
+// print_r($estante);
+// echo '<hr>';
+// $estante->removerLivro($livro2);
+// print_r($estante);
 
 // echo 'Livro: ' . $livro->getTitulo() . '<br>';
 // echo 'Autor: ' . $livro->getAutor() . '<br>';
