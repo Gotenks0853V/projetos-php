@@ -4,7 +4,7 @@ require_once 'vendor/autoload.php';
 
 use \Gotenks\Biblioteca\Livro;
 
-echo 'Sistema de Biblioteca Iniciado';
+echo '<h1>Sistema de Biblioteca Iniciado!</h1><br>';
 
 $livro = new Livro('Alessandro Kobs', 'PHP 8 e POO');
 

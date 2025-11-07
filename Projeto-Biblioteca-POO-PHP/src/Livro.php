@@ -4,15 +4,11 @@ namespace Gotenks\Biblioteca;
 
 class Livro {
     // Propriedades Privadas
-    private string $titulo, $autor;
     private bool $disponivel = false;
 
     // Construtor da Classe
-    public function __construct(string $autor, string $titulo)
-    {
-        $this->titulo = $titulo;
-        $this->autor = $autor;
-    }
+    // Utilizando a promoção de propriedade
+    public function __construct(private string $autor, private string $titulo) {}
 
     // Métodos de Ação (Alteram o estado do objeto)
     function marcarComoEmprestado()
