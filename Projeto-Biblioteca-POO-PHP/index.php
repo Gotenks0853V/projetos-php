@@ -24,9 +24,12 @@ $livroEncontrado = $estante->buscarLivroPorTitulo('iniciantes');
 //print_r($livroEncontrado);
 
 $professor = new Usuario('Professor Kobs', 'professor');
+$professor->adicionarLivroEmprestado($livro1);
+$professor->adicionarLivroEmprestado($livro2);
+//$professor->adicionarLivroEmprestado($livro3);
 
 echo '<pre>';
-var_dump($professor);
+var_dump($professor->podePegarEmprestado());
 echo '</pre>';
 
 //echo'<pre>';

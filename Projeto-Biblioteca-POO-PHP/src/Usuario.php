@@ -1,10 +1,9 @@
 <?php
 namespace Gotenks\Biblioteca;
 
-abstract class Usuario {
-    private string $nome;
+    class Usuario {
+    private string $nome, $tipo;
     private array $livrosEmprestados = [];
-    private string $tipo;
 
     public function __construct(string $nome, string $tipo = 'aluno')
     {
@@ -14,7 +13,14 @@ abstract class Usuario {
 
     public function podePegarEmprestado(): bool
     {
-        return true;
+        if ($this->tipo == 'professor' && count($this->livrosEmprestados) < 3) {
+            return true;
+        }
+
+        if ($this->tipo == 'aluno' && count($this->livrosEmprestados) < 1) {
+            return true;
+        }
+        return false;
     }
 
     public function adicionarLivroEmprestado(Livro $livro): void
@@ -32,7 +38,7 @@ abstract class Usuario {
 
     public function listarLivrosEmprestados(): array
     {
-        return $this->listarLivrosEmprestados();
+        return $this->livrosEmprestados;
     }
 }
 ?>
