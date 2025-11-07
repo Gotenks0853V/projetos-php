@@ -6,7 +6,7 @@ use \Gotenks\Biblioteca\Livro;
 use \Gotenks\Biblioteca\Estante;
 use \Gotenks\Biblioteca\Usuario;
 
-echo '<h1>Sistema de Biblioteca Iniciado!</h1><br>';
+//echo '<h1>Sistema de Biblioteca Iniciado!</h1><br>';
 
 $livro1 = new Livro('Alessandro Kobs', 'PHP 8 e POO para iniciantes');
 $livro2 = new Livro('Alessandro Kobs', 'Java para iniciantes');
