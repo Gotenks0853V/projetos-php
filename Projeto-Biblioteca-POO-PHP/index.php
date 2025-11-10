@@ -29,13 +29,18 @@ $livroEncontrado = $estante->buscarLivroPorTitulo('iniciantes');
 $aluno = new Aluno('Pereira');
 $aluno2 = new Aluno('Aluno 2');
 
-$bibliotecario = new Bibliotecario();
+try {
+    Bibliotecario::emprestarLivro($aluno, $livro1, $estante);
+    echo "Livro {$livro1->getTitulo()} emprestado para {$aluno->getNome()} <br>";
 
-$bibliotecario->emprestarLivro($aluno, $livro1, $estante);
+    Bibliotecario::devolverLivro($aluno, $livro1, $estante);
+    echo "Livro {$livro1->getTitulo()} devolvido por {$aluno->getNome()} <br>";
+} catch (\Exception $e) {
+    echo 'Erro: ' . $e->getMessage() . '<br>';
+}
 
-$bibliotecario->devolverLivro($aluno, $livro1, $estante);
 
-$bibliotecario->emprestarLivro($aluno2, $livro1, $estante);
+//$bibliotecario->emprestarLivro($aluno2, $livro1, $estante);
 
 echo '<pre>';
 var_dump($aluno->listarLivrosEmprestados());

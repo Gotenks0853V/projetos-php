@@ -2,10 +2,12 @@
 
 namespace Gotenks\Biblioteca;
 
+use Exception;
+
 class Bibliotecario 
 {
 
-    public function emprestarLivro(Usuario $usuario, Livro $livro, Estante $estante): bool
+    public static function emprestarLivro(Usuario $usuario, Livro $livro, Estante $estante): bool
     {
         // O livro tem que estar na estante
         // O livro tem que estar disponível
@@ -13,29 +15,27 @@ class Bibliotecario
         echo '<hr>';
 
         if (!$livro->estaDisponivel()) {
-            echo '<br>O livro não está disponível<br>';
+            throw new Exception('O livro não está disponível.');
             return false;
         }
 
         if (!$usuario->podePegarEmprestado()) {
-            echo '<br>O usuário não pode pegar livros emprestados.<br>';
+            throw new Exception('O usuário não pode pegar livros emprestados.');
             return false;
         }
 
-        if (!$estante->buscarLivroPorTitulo($livro->getTitulo())) {
-            echo '<br>O livro não está na estante<br>';
+        if (!$estante->verificarLivro($livro)) {
+            throw new Exception('O não está na estante.');
             return false;
         }
 
         $livro->marcarComoEmprestado();
         $usuario->adicionarLivroEmprestado($livro);
         $estante->removerLivro($livro);
-        echo '<br>Livro emprestado com sucesso!<br> <hr>';
-
         return true;
     }
 
-    public function devolverLivro(Usuario $usuario, Livro $livro, Estante $estante): bool
+    public static function devolverLivro(Usuario $usuario, Livro $livro, Estante $estante): bool
     {
         // O livro tem que estar com o usuário
         // O livro tem que ser colocado na estante
@@ -43,12 +43,17 @@ class Bibliotecario
         echo '<hr>';
 
         if ($livro->estaDisponivel()) {
-            echo '<br>O livro não está emprestado.<br>';
+            throw new Exception('O livro já está disponível.');
             return false;
         }
 
-        if ($estante->buscarLivroPorTitulo($livro->getTitulo())) {
-            echo '<br>O livro já está na estante.<br>';
+        if ($estante->verificarLivro($livro)) {
+            throw new Exception('O livro já está na estante.');
+            return false;
+        }
+
+        if (!in_array($livro, $usuario->listarLivrosEmprestados())) {
+            throw new Exception('O livro não está com o usuário.');
             return false;
         }
 
@@ -56,7 +61,6 @@ class Bibliotecario
         $usuario->removerLivroEmprestado($livro);
         $estante->adicionarLivro($livro);
         $livro->marcarComoDisponivel();
-        echo '<br>Livro Devolvido Com Sucesso!<br>';
         return true;
     }
 }
