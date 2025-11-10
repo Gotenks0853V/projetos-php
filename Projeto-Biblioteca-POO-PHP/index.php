@@ -6,6 +6,7 @@ use \Gotenks\Biblioteca\Livro;
 use \Gotenks\Biblioteca\Estante;
 use \Gotenks\Biblioteca\Aluno;
 use Gotenks\Biblioteca\Professor;
+use Gotenks\Biblioteca\Visitante;
 
 //echo '<h1>Sistema de Biblioteca Iniciado!</h1><br>';
 
@@ -24,11 +25,19 @@ $estante->adicionarLivro($livro3);
 $livroEncontrado = $estante->buscarLivroPorTitulo('iniciantes');
 //print_r($livroEncontrado);
 
-$aluno = new Aluno('Kobs');
+$aluno = new Aluno('Pereira');
 $aluno->adicionarLivroEmprestado($livro1);
+
+if ($aluno->podePegarEmprestado()) {
+    echo 'O Aluno pode pegar livros emprestados! <br>';
+} else {
+    echo 'O Aluno não pode pegar livros emprestados! <br>';
+}
+
 echo '<pre>';
 var_dump($aluno->listarLivrosEmprestados());
 echo '</pre><br>';
+
 
 $professor = new Professor('Kobs');
 $professor->adicionarLivroEmprestado($livro1);
@@ -37,6 +46,13 @@ $professor->adicionarLivroEmprestado($livro3);
 
 echo '<pre>';
 var_dump($professor->listarLivrosEmprestados());
+echo '</pre>';
+
+$visitante = new Visitante('Pessoa');
+//$visitante->adicionarLivroEmprestado($livro1);
+
+echo '<pre>';
+var_dump($visitante->podePegarEmprestado());
 echo '</pre>';
 
 //echo'<pre>';

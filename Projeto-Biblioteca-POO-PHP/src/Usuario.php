@@ -1,6 +1,8 @@
 <?php
 namespace Gotenks\Biblioteca;
 
+use Exception;
+
     abstract class Usuario {
     protected string $nome;
     protected array $livrosEmprestados = [];
@@ -14,7 +16,11 @@ namespace Gotenks\Biblioteca;
 
     public function adicionarLivroEmprestado(Livro $livro): void
     {
-        $this->livrosEmprestados[] = $livro;
+        if ($this->podePegarEmprestado()) {
+            $this->livrosEmprestados[] = $livro;
+        } else {
+            throw new \Exception("O usuário não pode pegar livros emprestados, mas tá tentando.");
+        }
     }
 
     public function removerLivroEmprestado(Livro $livro): void

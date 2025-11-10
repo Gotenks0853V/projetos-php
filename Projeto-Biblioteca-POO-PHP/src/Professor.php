@@ -4,15 +4,11 @@ namespace Gotenks\Biblioteca;
 
 class Professor extends Usuario 
 {
-
-    private int $maximoLivrosEmprestados = 3;
+    private const MAX_LIVROS_EMPRESTADOS = 3;
 
     public function podePegarEmprestado(): bool
     {
-        if (count($this->livrosEmprestados) < $this->maximoLivrosEmprestados) {
-            return true;
-        }
-        return false;
+        return count($this->livrosEmprestados) < self::MAX_LIVROS_EMPRESTADOS;
     }
 }
 ?>
