@@ -5,6 +5,7 @@ require_once 'vendor/autoload.php';
 use \Gotenks\Biblioteca\Livro;
 use \Gotenks\Biblioteca\Estante;
 use \Gotenks\Biblioteca\Aluno;
+use Gotenks\Biblioteca\Professor;
 
 //echo '<h1>Sistema de Biblioteca Iniciado!</h1><br>';
 
@@ -25,11 +26,17 @@ $livroEncontrado = $estante->buscarLivroPorTitulo('iniciantes');
 
 $aluno = new Aluno('Kobs');
 $aluno->adicionarLivroEmprestado($livro1);
-//$professor->adicionarLivroEmprestado($livro2);
-//$professor->adicionarLivroEmprestado($livro3);
-
 echo '<pre>';
 var_dump($aluno->listarLivrosEmprestados());
+echo '</pre><br>';
+
+$professor = new Professor('Kobs');
+$professor->adicionarLivroEmprestado($livro1);
+$professor->adicionarLivroEmprestado($livro2);
+$professor->adicionarLivroEmprestado($livro3);
+
+echo '<pre>';
+var_dump($professor->listarLivrosEmprestados());
 echo '</pre>';
 
 //echo'<pre>';
